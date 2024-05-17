@@ -1,0 +1,87 @@
+exec_always --no-startup-id feh --bg-scale /home/lily/Documents/wallpapers/94764268_p0.jpg
+exec_always --no-startup-id picom --experimental-backends -b
+
+set $mod Mod4
+
+font pango:DejaVu Sans Mono 8
+
+floating_modifier $mod
+
+bindsym $mod+Return exec kitty
+
+bindsym $mod+k kill
+
+bindsym $mod+space exec --no-startup-id rofi -show drun
+bindsym $mod+j exec --no-startup-id rofi -show calc
+bindsym $mod+Shift+p exec flameshot gui
+bindsym $mod+l exec ~/.config/xsecurelock/launch.sh
+bindsym $mod+s exec gtk-launch stag
+bindsym $mod+Shift+s exec kitty -c ~/.config/kitty/slate.conf
+# bindsym $mod+e exec neovide
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+h split h
+
+bindsym $mod+v split v
+
+bindsym $mod+f fullscreen
+
+bindsym $mod+Shift+m floating toggle
+bindsym $mod+w layout tabbed
+bindsym $mod+q layout toggle split
+
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 0
+
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 0
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec i3-msg exit 
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize shrink height 10 px or 10 ppt
+        bindsym Up resize grow height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+gaps inner 10
+
+for_window [class=".*"] border pixel 0
+
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/conky/launch.sh
+exec_always --no-startup-id $HOME/.config/alttab/launch.sh
