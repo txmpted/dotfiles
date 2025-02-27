@@ -2,16 +2,16 @@
 
 configuration {
   modes: "window,drun,run,ssh";
-  font: "JetBrainsMono 17";
+  font: "JetbrainsMono SemiBold 17";
   drun-display-format: "{name}";
 }
 
 * {
   // general
-  bg: #3f4451;
-  bgt: #28282895;
+  bg: #181a1f;
+  bgt: #16191c86;
   t: transparent;
-  fg: #bbbfc7;
+  fg: #9bb2bf;
 
   selected-bg: @fg;
   selected-fg: @bg;
@@ -31,15 +31,15 @@ window {
 
 listview {
   border: 0 0 0 0;
-  padding: 23 0 0;
+  padding: 40 10 0;
   scrollbar: true;
 }
 
 scrollbar {
-    width:        4px;
-    border:       0;
+    width:        15px;
+    border-radius:       7px;
     handle-color: @fg;
-    handle-width: 8px;
+    handle-width: 13px;
     padding:      0 5;
 }
 
@@ -57,8 +57,8 @@ textbox {
 }
 
 element {
-    border:  0;
-    padding: 2px;
+    border-radius:  7px;
+    padding: 8px;
 }
 element.normal.normal {
     background-color: @t;
