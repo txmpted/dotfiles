@@ -1,5 +1,5 @@
-exec_always --no-startup-id feh --bg-scale /home/lily/Documents/wallpapers/94764268_p0.jpg
-exec_always --no-startup-id picom --experimental-backends -b
+exec_always --no-startup-id feh --bg-scale /home/llylithe/Documents/wallpaper/wallpaper.jpg
+exec_always --no-startup-id picom
 
 set $mod Mod4
 
